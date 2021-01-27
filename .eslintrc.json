@@ -58,6 +58,8 @@
         "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "always" }],
         "react/jsx-no-bind": "off",
         "react/display-name": "off",
+        "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true}],
+        "react/jsx-max-depth": ["error", 10],
         // TODO: Enable some day
         "react-native/no-inline-styles": "off",
         "no-magic-numbers": "off",
