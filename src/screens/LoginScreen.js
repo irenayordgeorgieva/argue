@@ -1,25 +1,35 @@
 
-import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
-import Header from '../components/Header';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
+import PropTypes from 'prop-types'
+import React from 'react'
 
-const HomeScreen = ({ navigation }) => {
+
+function HomeScreen ({ navigation, }) {
+  function loginButtonOnPress () {
+    navigation.replace('Drawer')
+  }
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-        <Button title="Login" onPress={() => navigation.replace("Drawer")} />
+        <Button onPress={loginButtonOnPress} title="Login" />
       </ScrollView>
     </SafeAreaView>
   )
+}
+
+HomeScreen.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func,
+  }).isRequired,
 }
 
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
   },
-});
+})
 
 export default HomeScreen
