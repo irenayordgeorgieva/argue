@@ -6,47 +6,50 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import LaunchScreen from './screens/LaunchScreen'
-import HomeScreen from './screens/HomeScreen'
-import LoginScreen from './screens/LoginScreen'
-import { Icon } from 'react-native-elements'
-import { DrawerActions } from '@react-navigation/native'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { DrawerActions, NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import { createStackNavigator } from '@react-navigation/stack'
+import HomeScreen from './screens/HomeScreen'
+import { Icon } from 'react-native-elements'
+import LaunchScreen from './screens/LaunchScreen'
+import LoginScreen from './screens/LoginScreen'
+import React from 'react'
 
-const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator()
+const Drawer = createDrawerNavigator()
 
-const DrawerNavigator = () => {
+function DrawerNavigator () {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen component={HomeScreen} name="Home" />
     </Drawer.Navigator>
   )
 }
 
-const App = () => {
+function App () {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Launch" component={LaunchScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Drawer" component={DrawerNavigator} options={({ navigation }) => ({
-          title: 'Argue',
-          headerLeft: () => (
-            <Icon
-              iconStyle={{ paddingLeft: 15 }}
-              name='bars'
-              type='font-awesome'
-              color='#333'
-              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
-          ),
-        })} />
+        <Stack.Screen component={LaunchScreen} name="Launch" options={{ headerShown: false, }} />
+        <Stack.Screen component={LoginScreen} name="Login" options={{ headerShown: false, }} />
+        <Stack.Screen
+          component={DrawerNavigator}
+          name="Drawer"
+          options={({ navigation, }) => ({
+            headerLeft: () => (
+              <Icon
+                color="#333"
+                iconStyle={{ paddingLeft: 15, }}
+                name="bars"
+                onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+                type="font-awesome"
+              />),
+            title: 'Argue',
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default App

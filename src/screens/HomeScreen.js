@@ -1,11 +1,10 @@
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
+import Header from '../components/Header'
+import React from 'react'
 
-import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
-import Header from '../components/Header';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
-const HomeScreen = () => {
+function HomeScreen () {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
@@ -19,6 +18,6 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
   },
-});
+})
 
 export default HomeScreen

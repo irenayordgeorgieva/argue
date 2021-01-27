@@ -1,0 +1,66 @@
+{
+    "env": {
+        "browser": true,
+        "react-native/react-native": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:all",
+        "plugin:react/all",
+        "plugin:react-native/all"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "object-curly-spacing": ["error", "always"],
+        "sort-imports": ["error", { "ignoreCase": true }],
+        "one-var": ["error", { "uninitialized": "consecutive", "initialized": "never" }],
+        "padded-blocks": "off",
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+        "no-extra-parens": ["error", "all", { "ignoreJSX": "multi-line" }],
+        "react/jsx-indent": ["error", 2],
+        "react/jsx-filename-extension": "off",
+        "react/no-multi-comp": "off",
+        "semi": ["error", "never"],
+        "comma-dangle": ["error", { "imports": "never", "exports": "never", "functions": "never", "arrays": "always", "objects": "always" }],
+        "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+        "max-len": ["error", { "code": 120, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
+        "quote-props": ["error", "consistent-as-needed"],
+        "react/forbid-component-props": "off",
+        "no-use-before-define": "off",
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "jsx-quotes": ["error", "prefer-double"],
+        "react/jsx-newline": "off",
+        "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
+        "react/jsx-indent-props": ["error", 2],
+        "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "always" }],
+        "react/jsx-no-bind": "off",
+        "react/display-name": "off",
+        // TODO: Enable some day
+        "react-native/no-inline-styles": "off",
+        "no-magic-numbers": "off",
+        "react/jsx-props-no-spreading": "off"
+    }
+}
