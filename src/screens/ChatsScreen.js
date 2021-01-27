@@ -3,11 +3,11 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 import React from 'react'
 
 
-function HomeScreen () {
+function ChatsScreen () {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-        <Text>{'Home'}</Text>
+        <Text>{'Chats'}</Text>
       </ScrollView>
     </SafeAreaView>
   )
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default HomeScreen
+export default ChatsScreen
